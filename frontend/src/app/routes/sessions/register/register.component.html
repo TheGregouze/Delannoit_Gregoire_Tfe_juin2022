@@ -1,27 +1,42 @@
 <div class="w-full h-full" fxLayout="row wrap">
   <mat-card class="mat-elevation-z4 m-auto" style="max-width: 380px;">
-    <mat-card-title class="m-b-24">Bonjour,<br />Ca ne prend que quelques secondes pour créer un compte</mat-card-title>
+    <mat-card-title class="m-b-24">Bonjour, <br />Ca ne prend que quelques secondes pour créer un compte</mat-card-title>
 
-    <form class="form-field-full">
-      
+    <form class="form-field-full" [formGroup]="registerForm">
+
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <input matInput required>
+        <input matInput formControlName="email" required>
+        <mat-error *ngIf="registerForm.get('email')?.invalid">
+          Veuillez rentrer un email
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Nom d'utilisateur</mat-label>
-        <input matInput required>
+        <input matInput formControlName="username" required>
+        <mat-error *ngIf="registerForm.get('username')?.invalid">
+          Veuillez rentrer un nom d'utilisateur
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Mot de passe</mat-label>
-        <input matInput type="password" required>
+        <input matInput type="password" formControlName="password" required>
+        <mat-error *ngIf="registerForm.get('password')?.invalid">
+          Veuillez rentrer un mot de passe
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Confirmation mot de passe</mat-label>
-        <input matInput type="password" required>
+        <input matInput type="password" formControlName="cpass" required>
+        <mat-error *ngIf="registerForm.get('cpass')?.hasError('required')">
+          Veuillez rentrer la confirmation du mot de passe
+        </mat-error>
+        <mat-error *ngIf="registerForm.get('cpass')?.hasError('confirm')" translate [translateParams]="{value: 'login.password' | translate}">
+          {{'validations.inconsistent'}}
+        </mat-error>
       </mat-form-field>
 
       <button class="w-full" mat-raised-button color="primary" (click)="register()">Créer le compte</button>
@@ -29,7 +44,7 @@
       <div class="m-t-16">Vous avez déjà un compte ?
         <a (click)="moveToLogin()">Connexion</a>
       </div>
-
+      
     </form>
 
   </mat-card>

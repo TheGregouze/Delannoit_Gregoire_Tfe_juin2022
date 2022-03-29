@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'app/user.service';
+
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,7 +12,13 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
 
-  constructor(private _router: Router) {}
+  //Formulaire des donnees a comparer dans la DB
+  loginForm : FormGroup=new FormGroup({
+    email:new FormControl(null,[Validators.email, Validators.required]),
+    password: new FormControl(null, Validators.required)
+  });
+
+  constructor(private _router: Router, private _user:UserService) {}
 
   ngOnInit() {}
 
@@ -25,7 +34,15 @@ export class LoginComponent implements OnInit {
 
   //Permet de se connecter a un compte existant dans la DB
   login() {
-    console.log('A venir')
+    if(!this.loginForm.valid){
+      console.log('invalid');return;
+    }
+    this._user.login(JSON.stringify(this.loginForm.value))
+    .subscribe(
+      data=>{console.log(data);this._router.navigate(['/']);} ,
+      error=>console.error(error)
+    )
+    // console.log(JSON.stringify(this.loginForm.value));
   }
 
 }
