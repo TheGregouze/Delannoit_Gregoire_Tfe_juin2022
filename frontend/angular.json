@@ -79,6 +79,9 @@
             },
             "development": {
               "browserTarget": "frontend:build:development"
+            },
+            "options": {
+              "proxyConfig": "proxy.config.js"
             }
           },
           "defaultConfiguration": "development"
@@ -105,6 +108,15 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
