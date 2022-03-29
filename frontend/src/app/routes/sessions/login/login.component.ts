@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
       data=>{console.log(data);this._router.navigate(['/']);} ,
       error=>console.error(error)
     )
-    // console.log(JSON.stringify(this.loginForm.value));
   }
 
 }

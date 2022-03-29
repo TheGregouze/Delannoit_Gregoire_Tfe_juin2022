@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
 import { RoutesRoutingModule } from './routes-routing.module';
 
+import { NgImageSliderModule } from 'ng-image-slider';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './sessions/login/login.component';
 import { RegisterComponent } from './sessions/register/register.component';
@@ -20,7 +22,7 @@ const COMPONENTS: any[] = [
 const COMPONENTS_DYNAMIC: any[] = [];
 
 @NgModule({
-  imports: [SharedModule, RoutesRoutingModule],
+  imports: [SharedModule, RoutesRoutingModule, NgImageSliderModule],
   declarations: [...COMPONENTS, ...COMPONENTS_DYNAMIC],
 })
 export class RoutesModule {}
