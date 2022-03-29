@@ -33,6 +33,8 @@
     "@ngx-formly/material": "^5.10.32",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.23",
     "moment": "^2.29.1",
     "ng-image-slider": "^2.8.0",
     "ng-matero": "^13.0.4",
