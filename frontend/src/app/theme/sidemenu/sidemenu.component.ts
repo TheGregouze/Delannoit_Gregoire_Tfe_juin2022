@@ -1,4 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuService } from '@core';
 
 @Component({
@@ -14,5 +15,10 @@ export class SidemenuComponent {
   menu$ = this.menu.getAll();
   buildRoute = this.menu.buildRoute;
 
-  constructor(private menu: MenuService) {}
+  constructor(private menu: MenuService, private _router: Router) {}
+
+  test(){
+    this._router.navigate(['/test'])
+  }
+
 }

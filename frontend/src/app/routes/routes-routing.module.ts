@@ -12,6 +12,8 @@ import { Error404Component } from './sessions/404.component';
 import { Error500Component } from './sessions/500.component';
 // import { AuthGuard } from '@core';
 
+import { TestComponent } from 'app/test/test.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +23,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
+      { path: 'test', component: TestComponent},
       { path: '403', component: Error403Component },
       { path: '404', component: Error404Component },
       { path: '500', component: Error500Component },

@@ -32,4 +32,22 @@ export class UserService {
     });
   };
 
+  //Recupere les donnees sur les AP dans la DB.
+  getModelAP(){
+    let url = "http://localhost:3000/modelAP-api/modelAP";
+    return this._http.get(url);
+  }
+
+  //Recupere les donnees sur les switchs dans la DB.
+  getModelSwitch(){
+    let url = "http://localhost:3000/modelSwitch-api/modelSwitch";
+    return this._http.get(url);
+  }
+
+    //Recupere les donnees sur les routers dans la DB.
+  getModelRouter(){
+    let url = "http://localhost:3000/modelRouter-api/modelRouter";
+    return this._http.get(url);
+  }
+
 }

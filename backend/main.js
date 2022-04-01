@@ -63,8 +63,15 @@ app.use(express.static(path.join(__dirname, 'views')));
 //Gestion des routes API.
 const registerRouter = require('./api/register-api');
 const loginRouter = require('./api/login-api');
+const modelAPRouter = require('./api/modelAP');
+const modelSwitchRouter = require('./api/modelSwitch');
+const modelRouterRouter = require('./api/modelRouter');
+
 app.use('/register-api', registerRouter);
 app.use('/login-api', loginRouter);
+app.use('/modelAP-api', modelAPRouter);
+app.use('/modelSwitch-api', modelSwitchRouter);
+app.use('/modelRouter-api', modelRouterRouter);
 
 
 //Definition du port. PS: dernier bloc du code !
