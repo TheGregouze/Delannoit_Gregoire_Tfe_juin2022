@@ -4,11 +4,11 @@ import autoTable from 'jspdf-autotable';
 import { UserService } from 'app/user.service';
 
 @Component({
-  selector: 'app-test',
-  templateUrl: './test.component.html',
-  styleUrls: ['./test.component.scss']
+  selector: 'app-camera',
+  templateUrl: './camera.component.html',
+  styleUrls: ['./camera.component.scss']
 })
-export class TestComponent implements OnInit {
+export class CameraComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   listRow: any = {};
 
@@ -279,101 +279,6 @@ export class TestComponent implements OnInit {
         var formOrder = document.getElementById("formOrder2") as HTMLBodyElement
         formOrder.style.display = "none"
         qteFormSwitch.value = ""
-      
-      }
-    }
-  }
-
-
-  // Gestion des modèles router
-  imgRouter: Array<object> = [
-    {
-      thumbImage: '../assets/images/Router/USG.png',
-      alt: 'USG',
-      title: 'USG'
-    }, {
-      thumbImage: '../assets/images/Router/USG-PRO-4.png',
-      title: 'USG-PRO-4',
-      alt: 'USG-PRO-4'
-    }
-  ];
-
-  fillFormModelRouter(event: any){
-    this._user.getModelRouter().subscribe(data => {
-      var testRouter = Object.values(data);
-      var nameModel = (document.getElementById("nameModelRouter")) as (HTMLInputElement);
-      nameModel.innerHTML = testRouter[event].model ;
-      var priceFormValue = (document.getElementById("submitted-price-Router")) as (HTMLInputElement);
-      priceFormValue.value= testRouter[event].price;
-  
-      var formOrder = document.getElementById("formOrder3") as HTMLBodyElement
-      formOrder.style.display = "contents"
-    });
-  }
-
-  duplicateOrder3(duplicateToken: Boolean){
-    var nameModelRouter = (document.getElementById("nameModelRouter")) as (HTMLLabelElement)
-    for(var x in this.listRow){
-      if(this.listRow[x][0] == nameModelRouter.innerText){
-        duplicateToken = true
-      }
-    }
-    return duplicateToken
-  }
-
-  order3(){
-    var duplicateToken=false
-
-    var tableOrder = document.getElementById('tableOrder') as HTMLTableElement
-    var nameModelRouter = (document.getElementById("nameModelRouter")) as (HTMLInputElement);
-    
-    var priceFormValueRouter = (document.getElementById("submitted-price-Router")) as (HTMLInputElement);
-    var qteFormRouter = (document.getElementById('submitted-qte-Router')) as (HTMLInputElement);
-    
-    if(priceFormValueRouter.value.length == 0 ||qteFormRouter.value.length == 0 ){
-      console.log('Invalid')
-    }
-    else{
-      if(! this.duplicateOrder3(duplicateToken)){
-        var row =tableOrder.insertRow();
-          row.id = 'row-' + (Object.keys(this.listRow).length)
-          var cell1 = row.insertCell(0);
-          cell1.id = 'cellName-'+ (Object.keys(this.listRow).length)
-          var cell2 = row.insertCell(1);
-          cell2.id = 'cellDescri-'+ (Object.keys(this.listRow).length)
-          var cell3 = row.insertCell(2);
-          cell3.id = 'cellQte-'+ (Object.keys(this.listRow).length)  
-          var cell4 = row.insertCell(3);
-          cell4.id = 'cellPrice-'+ (Object.keys(this.listRow).length) 
-          var cell5 = row.insertCell(4);
-          cell5.id = "check-" + Object.keys(this.listRow).length
-  
-        cell1.innerHTML = nameModelRouter.innerHTML
-        cell2.innerHTML = "A venir"
-        cell3.innerHTML = qteFormRouter.value
-        cell4.innerHTML = String((Number(qteFormRouter.value)*Number(priceFormValueRouter.value)).toFixed(2))
-        cell5.innerHTML ='<input type="checkbox" class="checkup">'
-  
-        var index = Object.keys(this.listRow).length
-        var push = [nameModelRouter.innerHTML, "A venir", qteFormRouter.value, String(Number(qteFormRouter.value)*Number(priceFormValueRouter.value))]
-        this.listRow[ index ]= push
-  
-        var formOrder = document.getElementById("formOrder3") as HTMLBodyElement
-        formOrder.style.display = "none"
-        qteFormRouter.value = ""
-      }else{
-        for(var x in this.listRow){
-          if(this.listRow[x][0]==nameModelRouter.innerText){
-          var cellQte = document.getElementById('cellQte-' + x) as HTMLElement
-          cellQte.innerHTML = String(Number(cellQte.innerHTML)+Number(qteFormRouter.value))
-          var cellPrice = document.getElementById('cellPrice-' + x) as HTMLElement
-          cellPrice.innerHTML = String((Number(cellQte.innerHTML)*Number(priceFormValueRouter.value)).toFixed(2))
-          }
-        }
-  
-        var formOrder = document.getElementById("formOrder3") as HTMLBodyElement
-        formOrder.style.display = "none"
-        qteFormRouter.value = ""
       
       }
     }

@@ -1,0 +1,14 @@
+[
+{"model":"USW-Flex-Mini", "description": "A venir", "price": 26},
+{"model":"US-XG-6POE", "description": "A venir", "price": 546},
+{"model":"USW-16-PoE", "description": "A venir", "price": 272},
+{"model":"US-24-250W", "description": "A venir", "price": 363},
+{"model":"US-48-500W", "description": "A venir", "price": 761},
+{"model":"USW-Lite-8-PoE", "description": "A venir", "price": 99},
+{"model":"USW-Pro-48-PoE", "description": "A venir", "price": 1002},
+{"model":"USW-Aggregation", "description": "A venir", "price": 245},
+{"model":"USW-Lite-16-PoE", "description": "A venir", "price": 181},
+{"model":"USW-Pro-24-PoE", "description": "A venir", "price": 637},
+{"model":"USW-Pro-48", "description": "A venir", "price": 546},
+{"model":"USW-24-PoE", "description": "A venir", "price": 345},
+]

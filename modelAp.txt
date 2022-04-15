@@ -1,0 +1,12 @@
+[
+{"model":"NBE-5AC", "description": "A venir", "price": 90},
+{"model":"U6-Lite", "description": "A venir", "price": 90},
+{"model":"UAP-AC-IW", "description": "A venir", "price": 90},
+{"model":"UAP-IW-HD", "description": "A venir", "price": 163},
+{"model":"UAP-AC-LR", "description": "A venir", "price": 99},
+{"model":"U6-Pro", "description": "A venir", "price": 135},
+{"model":"U6-LR", "description": "A venir", "price": 158},
+{"model":"UAP-AC-M", "description": "A venir", "price": 90},
+{"model":"UAP-AC-M-PRO", "description": "A venir", "price": 181},
+{"model":"UAP-AC-HD", "description": "A venir", "price": 318},
+]

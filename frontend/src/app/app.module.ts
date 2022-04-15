@@ -3,6 +3,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 import { CoreModule } from '@core/core.module';
 import { ThemeModule } from '@theme/theme.module';
@@ -25,10 +26,11 @@ export function TranslateHttpLoaderFactory(http: HttpClient) {
 import { LoginService } from '@core/authentication/login.service';
 import { FakeLoginService } from './fake-login.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TestComponent } from './test/test.component';
+import { CameraComponent } from './camera/camera.component';
+import { Office365Component } from './office365/office365.component';
 
 @NgModule({
-  declarations: [AppComponent, TestComponent],
+  declarations: [AppComponent, CameraComponent, Office365Component],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -36,6 +38,7 @@ import { TestComponent } from './test/test.component';
     ThemeModule,
     RoutesModule,
     SharedModule,
+    NgImageSliderModule,
     FormlyConfigModule.forRoot(),
     NgxPermissionsModule.forRoot(),
     ToastrModule.forRoot(),

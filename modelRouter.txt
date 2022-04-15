@@ -1,0 +1,4 @@
+[
+{"model":"USG", "description": "A venir", "price": 126},
+{"model":"USG-PRO-4", "description": "A venir", "price": 313},
+]

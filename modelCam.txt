@@ -1,0 +1,14 @@
+[
+{"model":"Camera G4 PTZ", "description": "A venir", "price": 1641},
+{"model":"Camera G4 Pro", "description": "A venir", "price": 409},
+{"model":"Camera AI 360", "description": "A venir", "price": 272},
+{"model":"Camera G3 Pro", "description": "A venir", "price": 272},
+{"model":"Doorbell G4", "description": "A venir", "price": 181},
+{"model":"Camera G3 Micro", "description": "A venir", "price": 181},
+{"model":"Camera G4 Bullet", "description": "A venir", "price": 181},
+{"model":"Camera G4 Dome", "description": "A venir", "price": 163},
+{"model":"Camera G3 Dome", "description": "A venir", "price": 135},
+{"model":"Camera G3 Bullet", "description": "A venir", "price": 135},
+{"model":"Camera G3 Flex", "description": "A venir", "price": 72},
+{"model":"Camera G3 Instant", "description": "A venir", "price": 25},
+]

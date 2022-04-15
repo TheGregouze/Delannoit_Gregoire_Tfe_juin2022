@@ -17,8 +17,12 @@ export class SidemenuComponent {
 
   constructor(private menu: MenuService, private _router: Router) {}
 
-  test(){
-    this._router.navigate(['/test'])
+  moveToOffice(){
+    this._router.navigate(['/office365'])
+  }
+
+  moveToCamera(){
+    this._router.navigate(['/camera'])
   }
 
 }

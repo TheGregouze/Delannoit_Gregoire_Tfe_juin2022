@@ -66,9 +66,11 @@
   <div class="matero-col" fxFlex.gt-sm="55" fxFlex="100">
     <mat-card>
       <mat-tab-group class="m--16">
-        <mat-tab label="Modèles d'AP">
+        <mat-tab label="Modèles de caméras">
           <div class="m-16">
-TEST            
+
+            <ng-image-slider [images]="imgAP" [slideImage]="4" [animationSpeed]="0.5" [imagePopup]="false" #nav (imageClick)="fillFormModelAP($event)"></ng-image-slider>
+
             <form class="form-field-full" id="formOrder1" style="display: none;">
               <br>
               <div fxLayout="row wrap" fxLayoutGap="8px grid">
@@ -98,7 +100,9 @@ TEST
 
         <mat-tab label="Modèles de switch">
           <div class="m-16">
-test
+           
+            <ng-image-slider [images]="imgSwitch" [slideImage]="4" [animationSpeed]="0.5" [imagePopup]="false" #nav (imageClick)="fillFormModelSwitch($event)"></ng-image-slider>
+
             <form class="form-field-full" id="formOrder2" style="display: none;">
               <br>
               <div fxLayout="row wrap" fxLayoutGap="8px grid">
@@ -125,34 +129,7 @@ test
           </div>
         </mat-tab>
 
-        <mat-tab label="Modèles de router">
-          <div class="m-16">
-test
-            <form class="form-field-full" id="formOrder3" style="display: none;">
-              <br>
-              <div fxLayout="row wrap" fxLayoutGap="8px grid">
-                <div fxFlex="100" fxFlex.lt-sm="100"  style="text-align: center;" >
-                  <h3><label id="nameModelRouter">Modele de router</label></h3>
-                </div>
-      
-                <div fxFlex="50" fxFlex.lt-sm="100">
-                  <mat-form-field>
-                    <mat-label >Quantité</mat-label>
-                    <input matInput placeholder="quantité" id="submitted-qte-Router" required>
-                  </mat-form-field>
-                </div>
-      
-                <div fxFlex="50" fxFlex.lt-sm="100">
-                  <mat-form-field>
-                    <mat-label>Prix</mat-label>
-                    <input matInput placeholder="Prix" id="submitted-price-Router" required>
-                  </mat-form-field>
-                </div>
-                <button mat-raised-button color="primary" class="m-t-8" (click)="order3()">Order</button>
-              </div>
-            </form>
-          </div>
-        </mat-tab>
+        
       </mat-tab-group>
     </mat-card>
   </div>
